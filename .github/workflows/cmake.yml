@@ -25,6 +25,8 @@ jobs:
       with:
         repository: tdlib/td
         fetch-depth: 0
+    - name: switch commit
+      run: git checkout 7eabd8ca60de025e45e99d4e5edd39f4ebd9467e
 
     - name: Get Git Tag
       id: get-git-tag
@@ -61,4 +63,4 @@ jobs:
         files: tdlib.zip
         tag_name: ${{ steps.get-git-tag.outputs.git-tag }}
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
